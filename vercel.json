@@ -1,22 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "backend/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "backend/index.js" },
-    { "src": "/static/(.*)", "dest": "frontend/build/static/$1" },
-    { "src": "/(.+\\.(json|ico|png|jpg|svg))", "dest": "frontend/build/$1" },
-    { "src": "/(.*)", "dest": "frontend/build/index.html" }
-  ]
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build"
 }
