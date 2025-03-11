@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 // Pages
 import HomePage from './pages/HomePage';
 import CrowdfundingPage from './pages/CrowdfundingPage';
+import CampaignDetailPage from './pages/CampaignDetailPage';
+import ProposeCampaignPage from './pages/ProposeCampaignPage';
 
 // Placeholder pages for now
 const SubscriptionTiers = () => <div className="py-16 text-center">Subscription Tiers Page</div>;
@@ -19,8 +21,6 @@ const Terms = () => <div className="py-16 text-center">Terms of Service Page</di
 const Privacy = () => <div className="py-16 text-center">Privacy Policy Page</div>;
 const Login = () => <div className="py-16 text-center">Login Page</div>;
 const Signup = () => <div className="py-16 text-center">Signup Page</div>;
-const CampaignDetail = () => <div className="py-16 text-center">Campaign Detail Page</div>;
-const ProposeCampaign = () => <div className="py-16 text-center">Propose Campaign Page</div>;
 
 function App() {
   return (
@@ -32,8 +32,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/subscription-tiers" element={<SubscriptionTiers />} />
             <Route path="/crowdfunding" element={<CrowdfundingPage />} />
-            <Route path="/crowdfunding/:id" element={<CampaignDetail />} />
-            <Route path="/crowdfunding/propose" element={<ProposeCampaign />} />
+            <Route path="/crowdfunding/propose" element={<ProposeCampaignPage />} />
+            <Route path="/crowdfunding/:id" element={<CampaignDetailPage />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/faq" element={<Faq />} />
