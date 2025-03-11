@@ -2,15 +2,14 @@
   "name": "cartanga",
   "version": "1.0.0",
   "description": "Car Subscription Crowdfunding Platform",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
     "start": "node backend/index.js",
     "server": "nodemon backend/index.js",
     "client": "cd frontend && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install-client": "cd frontend && npm install",
-    "build": "cd frontend && npm run build",
-    "vercel-build": "npm run install-client && npm run build"
+    "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "npm run build"
   },
   "keywords": [
     "car",
@@ -31,5 +30,8 @@
   "devDependencies": {
     "concurrently": "^8.2.1",
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
